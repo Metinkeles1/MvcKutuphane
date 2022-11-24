@@ -31,5 +31,6 @@ namespace MvcKutuphane.Models.Entity
         public virtual ICollection<TblCezalar> TblCezalar { get; set; }
         public virtual TblKitap TblKitap { get; set; }
         public virtual TblUyeler TblUyeler { get; set; }
+        public virtual TblPersonel TblPersonel { get; set; }
     }
 }

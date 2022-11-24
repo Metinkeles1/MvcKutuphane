@@ -29,9 +29,9 @@ namespace MvcKutuphane.Models.Entity
         public string Sayfa { get; set; }
         public Nullable<bool> Durum { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblHareket> TblHareket { get; set; }
         public virtual TblKategori TblKategori { get; set; }
         public virtual TblYazar TblYazar { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblHareket> TblHareket { get; set; }
     }
 }

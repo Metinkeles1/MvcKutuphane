@@ -21,7 +21,7 @@ namespace MvcKutuphane.Models.Entity
         public Nullable<decimal> Para { get; set; }
         public Nullable<int> Hareket { get; set; }
     
-        public virtual TblHareket TblHareket { get; set; }
         public virtual TblUyeler TblUyeler { get; set; }
+        public virtual TblHareket TblHareket { get; set; }
     }
 }

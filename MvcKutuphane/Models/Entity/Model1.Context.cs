@@ -27,12 +27,12 @@ namespace MvcKutuphane.Models.Entity
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TblCezalar> TblCezalar { get; set; }
-        public virtual DbSet<TblHareket> TblHareket { get; set; }
         public virtual DbSet<TblKasa> TblKasa { get; set; }
         public virtual DbSet<TblKategori> TblKategori { get; set; }
         public virtual DbSet<TblKitap> TblKitap { get; set; }
-        public virtual DbSet<TblPersonel> TblPersonel { get; set; }
         public virtual DbSet<TblUyeler> TblUyeler { get; set; }
         public virtual DbSet<TblYazar> TblYazar { get; set; }
+        public virtual DbSet<TblHareket> TblHareket { get; set; }
+        public virtual DbSet<TblPersonel> TblPersonel { get; set; }
     }
 }
