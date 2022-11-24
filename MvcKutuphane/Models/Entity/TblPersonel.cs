@@ -11,10 +11,12 @@ namespace MvcKutuphane.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblPersonel
     {
         public byte Id { get; set; }
+        [Required(ErrorMessage ="Personel Adý Boþ Geçilemez")]
         public string Personel { get; set; }
     }
 }
