@@ -13,7 +13,7 @@ namespace MvcKutuphane.Controllers
         DbKutuphaneEntities db = new DbKutuphaneEntities();
         public ActionResult Index()
         {
-            var degerler = db.TblHareket.ToList();
+            var degerler = db.TblHareket.Where(x=>x.İslemDurum==false).ToList();
             return View(degerler);
         }
         [HttpGet]
