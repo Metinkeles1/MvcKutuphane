@@ -34,5 +34,7 @@ namespace MvcKutuphane.Models.Entity
         public virtual DbSet<TblYazar> TblYazar { get; set; }
         public virtual DbSet<TblHareket> TblHareket { get; set; }
         public virtual DbSet<TblPersonel> TblPersonel { get; set; }
+        public virtual DbSet<TblHakkimizda> TblHakkimizda { get; set; }
+        public virtual DbSet<TblIletisim> TblIletisim { get; set; }
     }
 }

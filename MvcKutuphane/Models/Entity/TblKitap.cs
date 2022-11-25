@@ -28,6 +28,7 @@ namespace MvcKutuphane.Models.Entity
         public string YayınEvi { get; set; }
         public string Sayfa { get; set; }
         public Nullable<bool> Durum { get; set; }
+        public string KitapResim { get; set; }
     
         public virtual TblKategori TblKategori { get; set; }
         public virtual TblYazar TblYazar { get; set; }
