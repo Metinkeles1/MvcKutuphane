@@ -28,5 +28,18 @@ namespace MvcKutuphane.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult OduncIade(int id)
+        {
+            var odn = db.TblHareket.Find(id);
+            return View("OduncIade", odn);
+        }
+        public ActionResult OduncGuncelle(TblHareket p)
+        {
+            var hareket = db.TblHareket.Find(p.Id);
+            hareket.UyeGetirtarih = p.UyeGetirtarih;
+            hareket.İslemDurum = true;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

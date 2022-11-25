@@ -87,6 +87,7 @@ namespace MvcKutuphane.Controllers
             kitap.BasımYıl = p.BasımYıl;
             kitap.Sayfa = p.Sayfa;
             kitap.YayınEvi = p.YayınEvi;
+            kitap.Durum = true;
             var ktg = db.TblKategori.Where(k => k.ID == p.TblKategori.ID).FirstOrDefault();
             var yzr = db.TblYazar.Where(k => k.ID == p.TblYazar.ID).FirstOrDefault();
             kitap.Kategori = ktg.ID;
