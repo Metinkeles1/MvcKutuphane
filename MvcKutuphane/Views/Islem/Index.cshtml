@@ -1,5 +1,8 @@
 ﻿@using MvcKutuphane.Models.Entity
-@model List<TblHareket>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblHareket>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -30,4 +33,7 @@
         </tr>
     }
 </table>
+<div>
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+</div>
 

@@ -13,7 +13,7 @@ namespace MvcKutuphane.Controllers
         DbKutuphaneEntities db = new DbKutuphaneEntities();
         public ActionResult Index()
         {
-            var degerler = db.TblHareket.Where(x=>x.İslemDurum==false).ToList();
+            var degerler = db.TblHareket.Where(x => x.İslemDurum == false).ToList();
             return View(degerler);
         }
         [HttpGet]
@@ -26,11 +26,15 @@ namespace MvcKutuphane.Controllers
         {
             db.TblHareket.Add(p);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
-        public ActionResult OduncIade(int id)
+        public ActionResult OduncIade(TblHareket p)
         {
-            var odn = db.TblHareket.Find(id);
+            var odn = db.TblHareket.Find(p.Id);
+            DateTime d1 = DateTime.Parse(odn.IadeTarih.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.dgr = d3.TotalDays;
             return View("OduncIade", odn);
         }
         public ActionResult OduncGuncelle(TblHareket p)

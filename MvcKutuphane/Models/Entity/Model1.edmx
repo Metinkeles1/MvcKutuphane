@@ -21,10 +21,10 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Uye" Type="int" />
+          <Property Name="Hareket" Type="int" />
           <Property Name="Baslangic" Type="smalldatetime" />
           <Property Name="Bitis" Type="smalldatetime" />
           <Property Name="Para" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="Hareket" Type="int" />
         </EntityType>
         <EntityType Name="TblHakkimizda">
           <Key>
@@ -199,6 +199,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="EnFazlakitapYazar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbKutuphaneModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCezalar" EntityType="Self.TblCezalar" Schema="dbo" store:Type="Tables" />
@@ -402,6 +403,7 @@
           </AssociationSet>
           <EntitySet Name="TblHakkimizda" EntityType="DbKutuphaneModel.TblHakkimizda" />
           <EntitySet Name="TblIletisim" EntityType="DbKutuphaneModel.TblIletisim" />
+          <FunctionImport Name="EnFazlakitapYazar" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="TblHareket">
           <Key>
@@ -620,6 +622,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EnFazlakitapYazar" FunctionName="DbKutuphaneModel.Store.EnFazlakitapYazar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
