@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcKutuphane.Models.Entity;
 
 namespace MvcKutuphane.Controllers
@@ -27,10 +28,18 @@ namespace MvcKutuphane.Controllers
             uye.Sifre = p.Sifre;
             uye.Ad = p.Ad;
             uye.Soyad = p.Soyad;
+            uye.KullaniciAdi = p.KullaniciAdi;
             uye.Fotoğraf = p.Fotoğraf;
             uye.Okul = p.Okul;
             db.SaveChanges();
             return  RedirectToAction("Index");
+        }
+       public ActionResult Kitaplarim()
+        {
+            var kullanici = (string)Session["Mail"];
+            var id = db.TblUyeler.Where(x => x.Mail == kullanici.ToString()).Select(z => z.Id).FirstOrDefault();
+            var degerler = db.TblHareket.Where(x => x.Uye == id).ToList();
+            return View(degerler);
         }
     }
 }
