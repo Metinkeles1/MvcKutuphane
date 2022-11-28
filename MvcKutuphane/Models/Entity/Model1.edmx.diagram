@@ -23,6 +23,7 @@
         <EntityTypeShape EntityType="DbKutuphaneModel.TblHakkimizda" Width="1.5" PointX="7.375" PointY="7.75" />
         <EntityTypeShape EntityType="DbKutuphaneModel.TblIletisim" Width="1.5" PointX="1.125" PointY="8" />
         <EntityTypeShape EntityType="DbKutuphaneModel.TblMesajlar" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="DbKutuphaneModel.TblDuyurular" Width="1.5" PointX="9.375" PointY="7.75" />
       </Diagram>
       <Diagram DiagramId="22010085253b4075abdd9dae2a181a44" Name="Diagram2" >
         <EntityTypeShape EntityType="DbKutuphaneModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
