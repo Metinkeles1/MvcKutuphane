@@ -10,15 +10,18 @@
     <div></div>
     <div style="margin-top:15px">
         <label>Üye ID</label>
-        @Html.TextBoxFor(k => k.Uye, new { @class = "form-control" })
+        @*@Html.TextBoxFor(k => k.Uye, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k=>k.TblUyeler.Id, (List<SelectListItem>) ViewBag.uyeler, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Kitap ID</label>
-        @Html.TextBoxFor(k => k.Kitap, new { @class = "form-control" })
+        @*@Html.TextBoxFor(k => k.Kitap, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.TblKitap.Id, (List<SelectListItem>)ViewBag.kitaplar, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Personel ID</label>
-        @Html.TextBoxFor(k => k.Personel, new { @class = "form-control" })
+        @*@Html.TextBoxFor(k => k.Personel, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.TblPersonel.Id, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Kitap Alış Tarihi</label>

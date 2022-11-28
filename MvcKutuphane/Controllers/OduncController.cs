@@ -19,11 +19,38 @@ namespace MvcKutuphane.Controllers
         [HttpGet]
         public ActionResult OduncVer()
         {
+            List<SelectListItem> uyeler = (from x in db.TblUyeler.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Ad +" "+ x.Soyad,
+                                               Value = x.Id.ToString()
+                                           }).ToList();
+            List<SelectListItem> kitaplar = (from x in db.TblKitap.Where(x=>x.Durum == true).ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Ad,
+                                               Value = x.Id.ToString()
+                                           }).ToList();
+            List<SelectListItem> personeller = (from x in db.TblPersonel.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.Personel,
+                                                 Value = x.Id.ToString()
+                                             }).ToList();
+            ViewBag.uyeler = uyeler;
+            ViewBag.kitaplar = kitaplar;
+            ViewBag.personeller = personeller;
             return View();
         }
         [HttpPost]
         public ActionResult OduncVer(TblHareket p)
         {
+            var uye = db.TblUyeler.Where(x => x.Id == p.TblUyeler.Id).FirstOrDefault();
+            var kitap = db.TblKitap.Where(x => x.Id == p.TblKitap.Id).FirstOrDefault();
+            var personel = db.TblPersonel.Where(x => x.Id == p.TblPersonel.Id).FirstOrDefault();
+            p.TblUyeler = uye;
+            p.TblKitap = kitap;
+            p.TblPersonel = personel;
             db.TblHareket.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");

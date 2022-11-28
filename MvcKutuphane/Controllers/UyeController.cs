@@ -60,5 +60,12 @@ namespace MvcKutuphane.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UyeKitapGecmis(int id)
+        {
+            var ktpgcms = db.TblHareket.Where(x => x.Uye == id).ToList();
+            var uyekit = db.TblUyeler.Where(x => x.Id == id).Select(z=>z.Ad + " " + z.Soyad).FirstOrDefault();
+            ViewBag.uyekit = uyekit;
+            return View(ktpgcms);
+        }
     }
 }
