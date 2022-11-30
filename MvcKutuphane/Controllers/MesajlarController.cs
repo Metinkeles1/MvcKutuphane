@@ -39,5 +39,9 @@ namespace MvcKutuphane.Controllers
             db.SaveChanges();
             return RedirectToAction("GidenMesaj", "Mesajlar");
         }        
+        public PartialViewResult MesajlarMenu()
+        {
+            return PartialView();
+        }
     }
 }
