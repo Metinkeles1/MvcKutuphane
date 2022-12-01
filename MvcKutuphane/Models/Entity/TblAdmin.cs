@@ -12,13 +12,10 @@ namespace MvcKutuphane.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TblMesajlar
+    public partial class TblAdmin
     {
         public int Id { get; set; }
-        public string Gonderen { get; set; }
-        public string Alici { get; set; }
-        public string Konu { get; set; }
-        public string Icerik { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
+        public string Kullanici { get; set; }
+        public string Sifre { get; set; }
     }
 }
