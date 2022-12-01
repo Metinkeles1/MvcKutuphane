@@ -8,6 +8,7 @@ using MvcKutuphane.Models.Entity;
 
 namespace MvcKutuphane.Controllers
 {
+    [AllowAnonymous]
     public class KayitOlController : Controller
     {
         // GET: KayitOl
@@ -22,7 +23,7 @@ namespace MvcKutuphane.Controllers
         {
             db.TblUyeler.Add(p);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Login", "GirisYap");
         }
 
         public ActionResult Exit()

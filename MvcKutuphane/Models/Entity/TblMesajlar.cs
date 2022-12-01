@@ -11,13 +11,15 @@ namespace MvcKutuphane.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class TblMesajlar
     {
         public int Id { get; set; }
         public string Gonderen { get; set; }
         public string Alici { get; set; }
         public string Konu { get; set; }
+        [AllowHtml]
         public string Icerik { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
     }
