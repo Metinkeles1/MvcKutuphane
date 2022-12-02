@@ -137,6 +137,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AyarlarController.cs" />
     <Compile Include="Controllers\DuyuruController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GrafikController.cs" />
@@ -217,6 +218,7 @@
     </Compile>
     <Compile Include="Models\Siniflarim\Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\.gitignore" />
@@ -2708,6 +2710,9 @@
     <Content Include="weberror\fonts\fontawesome-webfont.woff" />
     <Content Include="weberror\fonts\fontawesome-webfont.woff2" />
     <Content Include="weberror\fonts\FontAwesome.otf" />
+    <Content Include="Views\Ayarlar\Index.cshtml" />
+    <Content Include="Views\Ayarlar\Index2.cshtml" />
+    <Content Include="Views\Ayarlar\AdminGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

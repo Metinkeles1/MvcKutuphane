@@ -25,7 +25,7 @@ namespace MvcKutuphane.Controllers
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.Mail, false);
                 Session["Mail"] = bilgiler.Mail.ToString();              
-                return RedirectToAction("Index", "istatistik");
+                return RedirectToAction("Index", "Istatistik");
             }
             else
             {

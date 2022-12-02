@@ -11,6 +11,7 @@ namespace MvcKutuphane.Controllers
     {
         // GET: Odunc
         DbKutuphaneEntities db = new DbKutuphaneEntities();
+        [Authorize(Roles ="A")]
         public ActionResult Index()
         {
             var degerler = db.TblHareket.Where(x => x.İslemDurum == false).ToList();
